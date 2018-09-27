@@ -87,7 +87,7 @@ public class RemoteDroidServer {
                 line = in.readLine(); //read input from client
 //                System.out.println(line); //print whatever we get from client
 
-                if (line == null) {
+                while (line == null) {
                     client = server.accept(); //Listens for a connection to be made to this socket and accepts it
                     in = new BufferedReader(new InputStreamReader(client.getInputStream())); //the input stream where data will come from client
                     line = in.readLine();
