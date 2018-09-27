@@ -128,6 +128,17 @@ public class RemoteDroidServer {
                     robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
                     robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
                 }
+                else if(line.contains("right_click")){
+                    //Simulate press and release of mouse button 2(makes sure correct button is pressed
+                    // based on user's dexterity)
+                    robot.mousePress(InputEvent.BUTTON2_DOWN_MASK);
+                    robot.mouseRelease(InputEvent.BUTTON2_DOWN_MASK);
+                }
+                else if(line.equalsIgnoreCase("enter")){
+                    //Simulate press and release of key 'q'
+                    robot.keyPress(KeyEvent.VK_ENTER);
+                    robot.keyRelease(KeyEvent.VK_ENTER);
+                }
                 else if(line.equalsIgnoreCase("q")){
                     //Simulate press and release of key 'q'
                     robot.keyPress(KeyEvent.VK_Q);
