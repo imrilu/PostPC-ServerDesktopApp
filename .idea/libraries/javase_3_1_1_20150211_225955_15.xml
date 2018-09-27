@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javase-3.1.1-20150211.225955-15">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/external_libs/javase-3.1.1-20150211.225955-15.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
