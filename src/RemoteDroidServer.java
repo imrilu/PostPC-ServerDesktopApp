@@ -127,12 +127,21 @@ public class RemoteDroidServer {
 //                    robot.mouseMove((int)(nowx+movex),(int)(nowy+movey));//Move mouse pointer to new location
                 }
                 //if user taps on mousepad to simulate a left click
-                else if(line.contains("left_click")){
+                else if(line.equalsIgnoreCase("left_click")){
                     //Simulate press and release of mouse button 1(makes sure correct button is pressed based on user's dexterity)
                     robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
                     robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
                 }
-                else if(line.contains("right_click")){
+                else if(line.contains("double_click_left")){
+                    //Simulate double click button 1
+                    // first click
+                    robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                    robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+                    // second click
+                    robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                    robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+                }
+                else if(line.equalsIgnoreCase("right_click")){
                     //Simulate press and release of mouse button 2(makes sure correct button is pressed
                     // based on user's dexterity)
                     robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
