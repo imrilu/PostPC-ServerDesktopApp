@@ -53,7 +53,7 @@ public class JavaFX_SettingsBar extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-             root.setOnMousePressed(new EventHandler<MouseEvent>() {
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 xOffset = event.getSceneX();
@@ -96,5 +96,5 @@ public class JavaFX_SettingsBar extends Application {
 
     }
 
-    
+
 }

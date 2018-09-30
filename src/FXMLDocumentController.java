@@ -35,13 +35,13 @@ import javafx.scene.layout.StackPane;
 public class FXMLDocumentController implements Initializable {
 
     @FXML
-    private ImageView btn_settings, btn_user, btn_exit, btn_qr;
+    private ImageView btn_exit, btn_qr;
 
     @FXML
     private ImageView qrView;
 
     @FXML
-    private AnchorPane h_settings, h_user;
+    private AnchorPane h_user;
 
     protected static String QR_CODE_TEXT = "connectTo:";
 
@@ -51,14 +51,8 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleButtonAction(MouseEvent event) {
-        if (event.getTarget() == btn_settings && !h_settings.isVisible()) {
-            h_settings.setVisible(true);
-            h_user.setVisible(false);
-        } else if (event.getTarget() == btn_settings && h_settings.isVisible()) {
-            h_settings.setVisible(!h_settings.isVisible());
-        } else if (event.getTarget() == btn_qr && !h_user.isVisible()) {
+        if (event.getTarget() == btn_qr && !h_user.isVisible()) {
             h_user.setVisible(true);
-            h_settings.setVisible(false);
         } else if (event.getTarget() == btn_qr) {
             h_user.setVisible(!h_user.isVisible());
         } else if (event.getTarget() == btn_exit) {
@@ -102,7 +96,6 @@ public class FXMLDocumentController implements Initializable {
         qrView.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
 
         // setting the qr screen appear, and turning everything else off
-        h_settings.setVisible(false);
         h_user.setVisible(true);
 
         // creating server socket in new thread
